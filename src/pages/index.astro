@@ -3,6 +3,12 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+export const prerender = true;
+
+const response = await fetch('https://dog-api.kinduff.com/api/facts?number=1');
+const responseData = await response.json();
+const dogFact = responseData.facts[0];
 ---
 
 <!doctype html>
@@ -16,6 +22,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<h1 id="header">🧑‍🚀 Hello, Astronaut!</h1>
 			<button hx-get="/api/partials/main-header" hx-swap="none">Main Header</button>
 			<button hx-get="/api/partials/alt-header" hx-swap="none">Alt Header</button>
+
+			
+			<button hx-get="/api/partials/dog-fact" hx-target="#dog-fact">New Dog Fact</button>
+			<h2 id="dog-fact">{dogFact}</h2>
+
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
