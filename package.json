@@ -13,6 +13,7 @@
     "@astrojs/alpinejs": "^0.3.2",
     "@astrojs/check": "^0.4.1",
     "@astrojs/mdx": "^2.0.4",
+    "@astrojs/netlify": "^4.1.1",
     "@astrojs/rss": "^4.0.2",
     "@astrojs/sitemap": "^3.0.4",
     "@types/alpinejs": "^3.13.6",
