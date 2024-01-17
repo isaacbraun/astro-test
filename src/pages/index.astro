@@ -13,7 +13,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut! TESTING</h1>
+			<h1 id="header">🧑‍🚀 Hello, Astronaut!</h1>
+			<button hx-get="/api/partials/main-header" hx-swap="none">Main Header</button>
+			<button hx-get="/api/partials/alt-header" hx-swap="none">Alt Header</button>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
 				template serves as a lightweight, minimally-styled starting point for anyone looking to build
